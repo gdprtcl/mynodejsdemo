@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    div.container
+        form.form-horizontal(method='POST')
+            - each value, key in item
+                if key != '_id'
+                    div.form-group
+                        label.col-sm-2.control-label(for=key) #{key[0].toUpperCase() + key.substr(1).replace(/([A-Z])/, ' $1')}
+                        div.col-sm-10
+                            input.form-control(type='text', value=value, id=key, name=key)
+            div.row
+                div.col-sm-offset-2
+                    button.col-sm-4.btn.btn-success(type='submit') Submit

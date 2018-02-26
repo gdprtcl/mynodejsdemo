@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div.container
+    h1 Products
+    - each product in products
+      div.row
+        div.sm-col-12= product.name
+    div.row
+      div.sm-col-5
+        a.btn.btn-success(href="/product/create") Create new
